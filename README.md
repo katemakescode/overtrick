@@ -1,20 +1,24 @@
-## Mercantile
+## OverTrick
 
-Mercantile is an eCommerce "bookstore". It is intended as a demonstration of development skill, and does not in fact sell books.
+OverTrick is a web application to display and analyse club 
+[Duplicate Bridge](https://cdn.acbl.org/wp-content/uploads/2014/01/Laws-of-Duplicate-Bridge.pdf)
+pairs results. It is intended to be a demonstration of development skill rather
+ than something that would necessarily be used in the field.  
+ 
+The data is currently gleaned from the [BridgeNZ](https://bridgenz.co.nz) websiste, which 
+collates results data from clubs across New Zealand. Individual pages are scraped
+at intervals using Celery and Redis, in order to avoid swamping the website servers. 
 
-Currently, only the first stage has been completed, where the user can enter a search term, and the site will
-retrieve and display data from the Google Books API for books matching that term.
+I don't have extensive knowledge of Bridge, so the application may not reflect exact play.
 
-Mercantile is built using React.js, React-Bootstrap, Django and Django REST Framework. 
 
-## Road Map
+## Roadmap
 
-- [X] book search
-- [ ] responsive design
-- [ ] addition of items to an in-memory shopping cart
-- [ ] unit testing
-- [ ] cart viewing, and dummy checkout handling
-- [ ] order creaton  
-- [ ] new customer creation, and order histories
-- [ ] payment processing with Stripe
-- [ ] emailing of invoices
+- [ ] results scraping and display
+- [ ] unit testing  
+- [ ] data analysis and charting
+- [ ] member accounts and subscriptions
+- [ ] ladders and tournaments
+- [ ] partner requires
+- [ ] deployment to AWS
+- [ ] periodic scraping
