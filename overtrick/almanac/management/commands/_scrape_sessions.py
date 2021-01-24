@@ -1,7 +1,9 @@
-import csv
-
 import requests
 from bs4 import BeautifulSoup
+
+from almanac.models import Session
+
+SESSION_FIELDS = ['club', 'date', 'time', 'event']
 
 
 def scrape(club_id):
@@ -11,10 +13,12 @@ def scrape(club_id):
     soup = BeautifulSoup(response.text, 'html.parser')
     sessions = soup.select('.score_table_row')
 
-    with open('session.csv', mode='w') as file:
-        writer = csv.writer(file)
+    for session in sessions:
+        data = session.find_all('td')
+        values = {
+            field_name: data[i].text
+            for i, field_name in enumerate(SESSION_FIELDS)
+        }
 
-        for session in sessions:
-            data = session.find_all('td')
-            values = [x.text for x in data[0:4]]
-            writer.writerow(values)
+        s = Session(**values)
+        print(s)
