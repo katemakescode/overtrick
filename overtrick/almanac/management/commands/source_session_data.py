@@ -1,5 +1,7 @@
 from django.core.management.base import BaseCommand
 
+from ._scrape_sessions import scrape
+
 
 class Command(BaseCommand):
     help = 'Scrapes sessions data for the specified club'
@@ -8,7 +10,4 @@ class Command(BaseCommand):
         parser.add_argument('club_id', type=int)
 
     def handle(self, *args, **options):
-        self.scrape(options["club_id"])
-
-    def scrape(self, club_id):
-        print(f'hello {club_id}')
+        scrape(options["club_id"])
