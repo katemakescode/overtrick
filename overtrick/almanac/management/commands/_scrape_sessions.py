@@ -21,4 +21,4 @@ def scrape(club_id):
         }
 
         s = Session(**values)
-        print(s)
+        s.save()
