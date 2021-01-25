@@ -5,8 +5,8 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('almanac/', include('almanac.urls')),
-    path('', RedirectView.as_view(url='almanac/')),
+    path('', include('almanac.urls')),
+    # path('', RedirectView.as_view(url='almanac/')),
 ]
 
 if settings.DEBUG:
