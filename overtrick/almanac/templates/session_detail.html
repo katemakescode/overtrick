@@ -1,8 +1,7 @@
-{% extends "base.html" %}
-{% block title %}
-    {% block subtitle %}{% endblock subtitle %} Overtrick
-{% endblock title %}
+{% extends "layout.html" %}
 
-{% block content %}
+{% block subtitle %}Pairs |{% endblock subtitle %} Overtrick
+
+{% block main %}
     <p>Details for session {{ session.id }}.</p>
-{% endblock content %}
+{% endblock main %}

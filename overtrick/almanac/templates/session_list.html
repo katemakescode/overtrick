@@ -1,10 +1,9 @@
-{% extends "base.html" %}
-{% block title %}
-    {% block subtitle %}{% endblock subtitle %} Overtrick
-{% endblock title %}
+{% extends "layout.html" %}
 
-{% block content %}
+{% block subtitle %}Sessions |{% endblock subtitle %}
+
+{% block main %}
 {% for session in sessions %}
     <p>{{ session.date }} {{ session.time }} {{ session.event }}</p>
 {% endfor %}
-{% endblock content %}
+{% endblock main %}

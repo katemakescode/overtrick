@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% block subtitle %}{% endblock subtitle %} Overtrick
+{% endblock title %}
+
+{% block content %}
+<div class="row" >
+    <div id="nav-sidebar"
+         class="col-3 d-flex flex-column position-fixed h-100 px-5 py-3 bg-color-dark" >
+        <h3 class="pt-3 pb-2" >
+            <a href="{% url 'almanac:session_list' %}" >Overtrick</a >
+        </h3 >
+
+        <hr />
+
+        <ul id="sidebar-links" class="list-group list-group-flush ps-0" >
+            <li class="list-group-item bg-color-dark ps-0" >
+                <a href="{% url 'almanac:session_list' %}" >
+                    Wellington Bridge Club
+                </a >
+            </li >
+        </ul >
+
+        <hr />
+
+        {% block nav_sidebar %}Sidebar{% endblock %}
+
+        <footer class="mt-auto text-center" >
+            <small class="text-muted" >
+                Made by Kate &bull; Powered by Django
+            </small >
+        </footer >
+    </div >
+
+    <div id="main" class="col-9 offset-3 px-4 py-4" >
+        <header >
+            <div class="row" >
+                {% block header %}Header{% endblock header %}
+            </div >
+            <hr />
+        </header >
+        {% block main %}{% endblock main %}
+    </div >
+</div >
+{% endblock content %}
