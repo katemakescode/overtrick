@@ -1,0 +1,131 @@
+:root {
+    --color-white: #fcf4ee;
+    --color-light: #d5d1c3;
+    --color-contrast: #6C797A;
+    --color-dark: #1a2926;
+    --color-warning: #6c0f16;
+}
+
+body {
+    background-color: var(--color-white);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-contrast);
+}
+
+p, h4, h5, h6 {
+    opacity: 0.7;
+}
+
+@media (min-width: 992px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    h5 {
+        font-size: 1.2rem;
+    }
+}
+
+li {
+    padding-left: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-contrast);
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+#footer a:hover {
+    text-decoration: none;
+    color: var(--color-light);
+}
+
+input {
+    color: var(--color-contrast);
+}
+
+label {
+    opacity: 0.7;
+    color: var(--color-contrast);
+}
+
+#about .text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+@media (min-width: 992px) {
+    #about .text {
+        font-size: 1.2rem;
+    }
+}
+
+.form-control:focus, .btn-outline-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(213, 209, 195, 0.4);
+    border-color: rgba(108, 121, 122, 0.2);
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    box-shadow: none;
+    border-color: var(--color-light);
+    background-color: var(--color-white);
+    color: var(--color-contrast);
+}
+
+.btn-outline-primary,
+.btn-outline-primary:active,
+.btn-outline-primary:visited,
+.btn-outline-primary:focus {
+    border-color: var(--color-contrast);
+    color: var(--color-contrast);
+}
+
+.btn-outline-primary:hover {
+    border-color: var(--color-white);
+    background-color: var(--color-light);;
+    color: var(--color-white);
+}
+
+.alert {
+    display: inline-block;
+    border-color: var(--color-light);
+    height: 20%;
+    color: var(--color-contrast);
+}
+
+.bg-color-white {
+    background-color: var(--color-white);
+}
+
+.bg-color-light {
+    background-color: var(--color-light);
+}
+
+.bg-color-dark {
+    background-color: var(--color-dark);
+}
+
+.navbar-dark .navbar-brand {
+    color: var(--color-light);
+}
+
+.navbar a {
+    color: var(--color-light);
+}
+
+.navbar a:hover {
+    color: var(--color-contrast);
+}
