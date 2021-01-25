@@ -4,5 +4,7 @@
 {% endblock title %}
 
 {% block content %}
-    <p>Session listing for {{ club }}.</p>
+{% for session in sessions %}
+    <p>{{ session.date }} {{ session.time }} {{ session.event }}</p>
+{% endfor %}
 {% endblock content %}
