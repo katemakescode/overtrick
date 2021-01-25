@@ -2,59 +2,71 @@
 {% load static %}
 
 {% block title %}
-{% block subtitle %}{% endblock subtitle %} Overtrick
+    {% block subtitle %}{% endblock subtitle %} Overtrick
 {% endblock title %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{% static 'overtrick/css/social-circles.css' %}" >
+    <link rel="stylesheet"
+          href="{% static 'overtrick/css/social-circles.css' %}" >
 {% endblock stylesheets %}
 
 {% block content %}
-<div class="row" >
-    <div id="nav-sidebar"
-         class="col-3 d-flex flex-column position-fixed h-100 px-5 py-3 bg-color-dark" >
-        <h3 class="pt-3 pb-2" >
-            <a href="{% url 'almanac:session_list' %}" >Overtrick</a >
-        </h3 >
-
-        <hr />
-
-        <ul id="sidebar-links" class="list-group list-group-flush ps-0" >
-            <li class="list-group-item bg-color-dark ps-0" >
-                <a href="{% url 'almanac:session_list' %}" >
-                    Sessions
-                </a >
-            </li >
-        </ul >
-        <hr />
-
-        {% block nav_sidebar %}Sidebar{% endblock %}
-
-        <footer class="mt-auto text-center" >
-            <div class="" >
-                <a class="icon-linkedin social-button borderless"
-                   href="https://www.linkedin.com/in/katemckenzie/" >
-                </a >
-                <a class="icon-github social-button borderless"
-                   href="https://github.com/katemakescode/mercantile" >
-                </a >
-            </div >
-
-            <small class="text-muted" >
-                <a href="https://behind-the-web.herokuapp.com/" >Crafted by Kate</a >
-                &bull; Powered by Django
-            </small >
-        </footer >
-    </div >
-
-    <div id="main" class="col-9 offset-3 px-4 py-4" >
-        <header >
-            <h3 >
-                {% block header %}{% endblock header %}
+    <div class="row" >
+        <div id="nav-sidebar"
+             class="col-3 d-flex flex-column position-fixed h-100 px-5 py-3 bg-color-dark" >
+            <h3 class="pt-3 pb-2" >
+                <a href="{% url 'almanac:session_list' %}" >Overtrick</a >
             </h3 >
+
             <hr />
-        </header >
-        {% block main %}{% endblock main %}
+
+            <ul id="sidebar-links" class="list-group list-group-flush ps-0" >
+                <li class="list-group-item bg-color-dark ps-0" >
+                    <a href="{% url 'almanac:session_list' %}" >
+                        Sessions
+                    </a >
+                </li >
+                <li class="list-group-item bg-color-dark ps-0" >
+                    <a href="{% url 'almanac:session_list' %}" >
+                        Players
+                    </a >
+                </li >
+            </ul >
+            <hr />
+
+            <footer class="mt-auto text-center" >
+                <div id="calendar" class="card mb-5 bg-color-dark" >
+                    <div class="card-body" >
+                        <h5 class="card-title" >Calendar</h5 >
+                        <p class="card-text" ></p >
+                    </div >
+                </div >
+
+                <div >
+                    <a class="icon-linkedin social-button borderless"
+                       href="https://www.linkedin.com/in/katemckenzie/" >
+                    </a >
+                    <a class="icon-github social-button borderless"
+                       href="https://github.com/katemakescode/mercantile" >
+                    </a >
+                </div >
+
+                <small class="text-muted" >
+                    <a href="https://behind-the-web.herokuapp.com/" >Crafted by
+                        Kate</a >
+                    &bull; Powered by Django
+                </small >
+            </footer >
+        </div >
+
+        <div id="main" class="col-9 offset-3 px-4 py-4" >
+            <header >
+                <h3 >
+                    {% block header %}{% endblock header %}
+                </h3 >
+                <hr />
+            </header >
+            {% block main %}{% endblock main %}
+        </div >
     </div >
-</div >
 {% endblock content %}
