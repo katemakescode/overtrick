@@ -63,6 +63,14 @@ label {
     line-height: 1.5;
 }
 
+th {
+    font-weight: normal;
+}
+
+td {
+    opacity: 0.7;
+}
+
 @media (min-width: 992px) {
     #about .text {
         font-size: 1.2rem;

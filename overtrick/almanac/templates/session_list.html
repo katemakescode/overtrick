@@ -2,8 +2,23 @@
 
 {% block subtitle %}Sessions |{% endblock subtitle %}
 
+{% block header %}Wellington Bridge Club{% endblock header %}
+
 {% block main %}
-{% for session in sessions %}
-    <p>{{ session.date }} {{ session.time }} {{ session.event }}</p>
-{% endfor %}
+<table class="table" >
+    <tbody >
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Event</th>
+        </tr>
+    {% for session in sessions %}
+        <tr>
+            <td>{{ session.date }}</td>
+            <td>{{ session.time }}</td>
+            <td>{{ session.event }}</td>
+        </tr>
+    {% endfor %}
+    </tbody >
+</table >
 {% endblock main %}
