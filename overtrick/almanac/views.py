@@ -1,5 +1,6 @@
-from django.http import HttpResponse
 from django.shortcuts import render
+
+from .models import Session
 
 
 def index(request):
@@ -7,4 +8,9 @@ def index(request):
 
 
 def detail(request, session_id):
-    return HttpResponse(f'Session {session_id} results go here.')
+    session = Session.objects.get(pk=session_id)
+    return render(
+        request,
+        'session_detail.html',
+        context={'session': session}
+    )
