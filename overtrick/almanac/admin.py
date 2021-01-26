@@ -1,5 +1,5 @@
 from django.contrib import admin
 
-from almanac.models import Session
+from .models import Session
 
 admin.site.register(Session)
