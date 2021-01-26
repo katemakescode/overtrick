@@ -14,9 +14,8 @@ def scrape(club_id):
     sessions = soup.select('.score_table_row')
 
     for session in sessions:
-        data = session.find_all('td')
         values = {
-            field_name: data[i].text
+            field_name: session.find_all('td')[i].text
             for i, field_name in enumerate(SESSION_FIELDS)
         }
 

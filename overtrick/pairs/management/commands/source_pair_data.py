@@ -10,6 +10,12 @@ class Command(BaseCommand):
         parser.add_argument('club_id', type=str)
         parser.add_argument('date', type=str)
         parser.add_argument('time', type=str)
+        parser.add_argument('event', type=str)
 
     def handle(self, *args, **options):
-        scrape(options['club_id'], options['date'], options['time'])
+        scrape(
+            options['club_id'],
+            options['date'],
+            options['time'],
+            options['event'],
+        )
