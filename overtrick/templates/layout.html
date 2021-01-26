@@ -59,14 +59,17 @@
             </footer >
         </div >
 
-        <div id="main" class="col-9 offset-3 px-4 py-4" >
-            <header >
-                <h3 >
-                    {% block header %}{% endblock header %}
-                </h3 >
-                <hr />
+        <section id="main" class="container-fluid col-9 offset-3 px-4 py-4" >
+            <header class="row h4" >
+                <div class="col" >
+                    {% block header-left %}{% endblock header-left %}
+                </div >
+                <div class="col align-right" >
+                    {% block header-right %}{% endblock header-right %}
+                </div >
             </header >
+            <hr />
             {% block main %}{% endblock main %}
-        </div >
+        </section >
     </div >
 {% endblock content %}

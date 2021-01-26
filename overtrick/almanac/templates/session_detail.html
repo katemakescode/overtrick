@@ -2,18 +2,13 @@
 
 {% block subtitle %}Pairs |{% endblock subtitle %} Overtrick
 
-{% block header %}
-    <div class="container-fluid" >
-        <div class="row" >
-            <div class="col ps-0">
-                {{ session.event }}
-            </div >
-            <div class="col align-right pe-0">
-                {{ session.time }}, {{ session.date }}
-            </div >
-        </div >
-    </div >
-{% endblock header %}
+{% block header-left %}
+    {{ session.event }}
+{% endblock header-left %}
+
+{% block header-right %}
+    {{ session.time }}, {{ session.date }}
+{% endblock header-right %}
 
 {% block main %}
 {% endblock main %}
