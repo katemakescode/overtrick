@@ -1,13 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from .models import Session
 
 
-def index(request):
+def list(request):
     return render(
         request,
         'session_list.html',
-        context={'sessions': Session.objects.order_by('-date')[:3]}
+        {'sessions': Session.objects.order_by('-date')[:3]}
     )
 
 
@@ -15,5 +15,5 @@ def detail(request, session_id):
     return render(
         request,
         'session_detail.html',
-        context={'session': Session.objects.get(pk=session_id)}
+        {'session': get_object_or_404(Session, pk=session_id)}
     )

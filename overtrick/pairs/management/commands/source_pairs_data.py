@@ -7,7 +7,9 @@ class Command(BaseCommand):
     help = 'Scrapes pairs data for the specified session'
 
     def add_arguments(self, parser):
-        parser.add_argument('session_id', type=int)
+        parser.add_argument('club_id', type=int)
+        parser.add_argument('date', type=str)
+        parser.add_argument('time', type=str)
 
     def handle(self, *args, **options):
-        scrape(options["session_id"])
+        scrape(**options)
