@@ -7,7 +7,7 @@ def list(request):
     return render(
         request,
         'session_list.html',
-        {'sessions': Session.objects.order_by('-date')[:3]}
+        {'sessions': Session.objects.order_by('-date')[1:4]}
     )
 
 

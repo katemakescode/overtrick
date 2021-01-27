@@ -19,6 +19,7 @@ def scrape(club_id, date, time, event):
     orientations = soup.select('table')[1:3]
     for orientation in orientations:
         label = orientation.select('tr.headings')[0].text
+        label = ''.join([direction[0] for direction in label.split('/')])
 
         pairs = orientation.select('.score_table_row')
         for pair in pairs:

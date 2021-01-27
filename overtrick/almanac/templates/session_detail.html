@@ -7,7 +7,7 @@
 {% endblock header-left %}
 
 {% block header-right %}
-    {{ session.time }}, {{ session.date }}
+    {{ session.get_time_display }}, {{ session.date }}
 {% endblock header-right %}
 
 {% block main %}

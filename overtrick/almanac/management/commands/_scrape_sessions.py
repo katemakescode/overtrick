@@ -18,6 +18,8 @@ def scrape(club_id):
             field_name: session.find_all('td')[i].text
             for i, field_name in enumerate(SESSION_FIELDS)
         }
+        values['club'] = values['club'].rsplit(' ', 2)[0]
+        values['time'] = values['time'][0]
 
         s = Session(**values)
         s.save()

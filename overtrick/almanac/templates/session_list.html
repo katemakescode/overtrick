@@ -15,7 +15,7 @@
         {% for session in sessions %}
             <tr onclick="window.location='{% url "almanac:session_detail" session.id %}';" >
                 <td >{{ session.date }}</td >
-                <td >{{ session.time }}</td >
+                <td >{{ session.get_time_display }}</td >
                 <td >{{ session.event }}</td >
             </tr >
         {% endfor %}
