@@ -20,6 +20,10 @@ class Pair(models.Model):
     player_b = models.CharField(max_length=25)
     points = models.IntegerField()
 
+    @property
+    def player_names(self):
+        return f'{self.player_a} and {self.player_b}'
+
     class Meta:
         constraints = [
             models.UniqueConstraint(
