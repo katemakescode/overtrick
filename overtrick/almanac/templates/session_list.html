@@ -5,20 +5,20 @@
 {% block header-left %}Wellington Bridge Club{% endblock header-left %}
 
 {% block main %}
-<table class="table" >
-    <tbody >
-        <tr>
-            <th scope="col">Date</th>
-            <th scope="col">Time</th>
-            <th scope="col">Event</th>
-        </tr>
-    {% for session in sessions %}
-        <tr>
-            <td>{{ session.date }}</td>
-            <td>{{ session.time }}</td>
-            <td>{{ session.event }}</td>
-        </tr>
-    {% endfor %}
-    </tbody >
-</table >
+    <table class="table table-hover" >
+        <tbody >
+        <tr >
+            <th scope="col" >Date</th >
+            <th scope="col" >Time</th >
+            <th scope="col" >Event</th >
+        </tr >
+        {% for session in sessions %}
+            <tr onclick="window.location='{% url "almanac:session_detail" session.id %}';" >
+                <td >{{ session.date }}</td >
+                <td >{{ session.time }}</td >
+                <td >{{ session.event }}</td >
+            </tr >
+        {% endfor %}
+        </tbody >
+    </table >
 {% endblock main %}

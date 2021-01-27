@@ -12,19 +12,19 @@
 
 {% block main %}
     <table class="table" >
-    <tbody >
-        <tr>
-            <th scope="col">Pair</th>
-            <th scope="col">Players</th>
-            <th scope="col">Points</th>
-        </tr>
-    {% for pair in session.pair_set.all %}
-        <tr>
-            <td>{{ pair.number }}</td>
-            <td>{{ pair.player_names }}</td>
-            <td>{{ pair.points }}</td>
-        </tr>
-    {% endfor %}
-    </tbody >
-</table >
+        <tbody >
+        <tr >
+            <th scope="col" >Pair</th >
+            <th scope="col" >Players</th >
+            <th scope="col" >Points</th >
+        </tr >
+        {% for pair in session.pair_set.all %}
+            <tr >
+                <td >{{ pair.number }}</td >
+                <td >{{ pair.player_names }}</td >
+                <td >{{ pair.points }}</td >
+            </tr >
+        {% endfor %}
+        </tbody >
+    </table >
 {% endblock main %}
