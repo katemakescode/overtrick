@@ -18,7 +18,7 @@ class Pair(models.Model):
     number = models.IntegerField()
     player_a = models.CharField(max_length=25)
     player_b = models.CharField(max_length=25)
-    points = models.IntegerField()
+    points = models.FloatField()
 
     @property
     def player_names(self):

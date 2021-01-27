@@ -22,7 +22,7 @@
             <tr >
                 <td >{{ pair.number }}</td >
                 <td >{{ pair.player_names }}</td >
-                <td >{{ pair.points }}</td >
+                <td >{{ pair.points|floatformat }}</td >
             </tr >
         {% endfor %}
         </tbody >
